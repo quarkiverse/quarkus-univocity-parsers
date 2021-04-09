@@ -1,0 +1,5 @@
+name: quarkus-univocity-parsers
+title: Quarkus - Univocity Parsers
+version: dev
+nav:
+  - modules/ROOT/nav.adoc
