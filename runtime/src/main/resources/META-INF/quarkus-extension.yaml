@@ -1,9 +1,12 @@
 name: Univocity Parsers
-#description: Univocity Parsers ...
+description: Univocity Parsers ...
 metadata:
-#  keywords:
-#    - univocity-parsers
-#  guide: ...
-#  categories:
-#    - "miscellaneous"
-#  status: "preview"
+  keywords:
+    - univocity-parsers
+    - csv
+    - tsv
+    - parsers
+  #  guide: ...
+  categories:
+    - "miscellaneous"
+status: "preview"

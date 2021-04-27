@@ -1,4 +1,4 @@
-package io.quarkiverse.univocityparsers.univocity.parsers.it;
+package io.quarkiverse.univocityparsers.it;
 
 import io.quarkus.test.junit.NativeImageTest;
 

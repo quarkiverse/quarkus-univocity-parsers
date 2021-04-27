@@ -1,23 +1,32 @@
-# Quarkus - Univocity Parsers
+The Quarkus Univocity Extension adds support for
+[Univocity](https://www.univocity.com/pages/univocity_parsers_tutorial) official Univocity website.
 
-## Welcome to Quarkiverse!
+## Usage
 
-Congratulations and thank you for creating a new Quarkus extension project in Quarkiverse!
+To use the extension, add the dependency to the target project:
 
-Feel free to replace this content with the proper description of your new project and necessary instructions how to use and contribute to it.
+```xml
+<dependency>
+  <groupId>io.quarkiverse.jberet</groupId>
+  <artifactId>quarkus-jberet</artifactId>
+  <version>0.0.4</version>
+</dependency>
+```
+## Contributors ✨____
 
-You can find the basic info, Quarkiverse policies and conventions in [the Quarkiverse wiki](https://github.com/quarkiverse/quarkiverse/wiki).
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
-In case you are creating a Quarkus extension project for the first time, please follow [Building My First Extension](https://quarkus.io/guides/building-my-first-extension) guide.
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/aruffie"><img src="https://avatars.githubusercontent.com/u/80361700?s=400&u=c97314ff08a02b81d7fb8a17e044073dce4d431f&v=4" width="100px;" alt=""/><br /><sub><b>Adrien Ruffié</b></sub></a></td>
+  </tr>
+</table>
 
-Other useful articles related to Quarkus extension development can be found under the [Writing Extensions](https://quarkus.io/guides/#writing-extensions) guide category on the [Quarkus.io](http://quarkus.io) website.
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
-Thanks again, good luck and have fun!
-
-## Documentation
-
-The documentation for this extension should be maintained as part of this repository and it is stored in the `docs/` directory. 
-
-The layout should follow the [Antora's Standard File and Directory Set](https://docs.antora.org/antora/2.3/standard-directories/).
-
-Once the docs are ready to be published, please open a PR including this repository in the [Quarkiverse Docs Antora playbook](https://github.com/quarkiverse/quarkiverse-docs/blob/main/antora-playbook.yml#L7). See an example [here](https://github.com/quarkiverse/quarkiverse-docs/pull/1).
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
