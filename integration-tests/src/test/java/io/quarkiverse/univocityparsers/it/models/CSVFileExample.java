@@ -1,10 +1,3 @@
-/*
- *  Copyright (C) DALKIA SA - 2015-2017 All Rights Reserved
- *  Unauthorized copying of this file, via any medium is strictly prohibited
- *  Proprietary and confidential
- *  Contact : contact@dalkia.fr
- */
-
 package io.quarkiverse.univocityparsers.it.models;
 
 import java.io.Serializable;
