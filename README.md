@@ -7,9 +7,8 @@ To use the extension, add the dependency to the target project:
 
 ```xml
 <dependency>
-  <groupId>io.quarkiverse.jberet</groupId>
-  <artifactId>quarkus-jberet</artifactId>
-  <version>0.0.4</version>
+    <groupId>io.quarkiverse.univocityparsers</groupId>
+    <artifactId>quarkus-univocity-parsers</artifactId>
 </dependency>
 ```
 ## Contributors ✨____
@@ -29,4 +28,5 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions
+of any kind welcome!
