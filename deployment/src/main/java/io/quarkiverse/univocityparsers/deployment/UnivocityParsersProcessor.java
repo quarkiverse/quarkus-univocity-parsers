@@ -1,5 +1,10 @@
 package io.quarkiverse.univocityparsers.deployment;
 
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
+
+import org.jboss.jandex.ClassInfo;
 import org.jboss.jandex.DotName;
 import org.jboss.logging.Logger;
 
@@ -14,9 +19,11 @@ import io.quarkus.deployment.builditem.nativeimage.ReflectiveClassBuildItem;
 
 class UnivocityParsersProcessor {
 
-    private static final Logger log = Logger.getLogger("io.quarkiverse.univocityparsers");
+    private static final Logger log = Logger.getLogger(UnivocityParsersProcessor.class);
 
-    private static final String FEATURE = "univocity-parsers";
+    private static final String FEATURE = "univocity";
+    private static final String INDEX_DEPENDENCY_GROUPE_ID = "com.univocity";
+    private static final String INDEX_DEPENDENCY_ARTIFACT_ID = "univocity-parsers";
     private static final DotName CONVERSION_INTERFACE = DotName.createSimple(Conversion.class.getName());
 
     @BuildStep
@@ -26,7 +33,7 @@ class UnivocityParsersProcessor {
 
     @BuildStep
     IndexDependencyBuildItem indexUnivocityParserJar() {
-        return new IndexDependencyBuildItem("com.univocity", FEATURE);
+        return new IndexDependencyBuildItem(INDEX_DEPENDENCY_GROUPE_ID, INDEX_DEPENDENCY_ARTIFACT_ID);
     }
 
     @BuildStep
@@ -40,13 +47,17 @@ class UnivocityParsersProcessor {
         // Produce one build item for Conversion interface
         reflectiveClasses.produce(new ReflectiveClassBuildItem(true, true, CONVERSION_INTERFACE.toString()));
 
+        // Get all class implementation of Conversion
+        Collection<ClassInfo> implementorClassInfos = combinedIndex.getIndex().getAllKnownImplementors(CONVERSION_INTERFACE);
+        List<String> implementorClassList = new LinkedList<>();
+        for (ClassInfo implClassInfo : implementorClassInfos) {
+            String combinedIndexName = implClassInfo.name().toString();
+            log.debugf("Conversion class implementation '[%s]' registered for reflection", combinedIndex);
+            implementorClassList.add(combinedIndexName);
+        }
+
         // Produce one build item for all Conversion interface implementors
         reflectiveClasses.produce(new ReflectiveClassBuildItem(true, true,
-                combinedIndex.getIndex().getAllKnownImplementors(CONVERSION_INTERFACE).stream()
-                        .map(ci -> {
-                            String combinedIndexName = ci.name().toString();
-                            log.debug("Conversion class implementation '" + combinedIndexName + "' registered for reflection");
-                            return combinedIndexName;
-                        }).toArray(String[]::new)));
+                implementorClassList.toArray(new String[implementorClassList.size()])));
     }
 }
