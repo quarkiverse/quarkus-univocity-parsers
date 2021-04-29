@@ -19,6 +19,7 @@ public class UnivocityParsersResourceTest {
 
     @Test
     public void testExampleCsvFile() {
+        assertEquals("UTC", System.getProperty("user.timezone"));
 
         Map<String, String> formParams = new HashMap<>();
         formParams.put("fromClassPathFile", EXAMPLE_CSV_FILE);
@@ -42,7 +43,6 @@ public class UnivocityParsersResourceTest {
      */
     private Map<String, String> generatedExceptedCSVFileExamples() {
         Map<String, String> jsonStringResult = new HashMap<>();
-
         StringBuilder builder = new StringBuilder();
         jsonStringResult.put("\"DMEADRA-DA\"", builder.append(
                 "{\"admin\":").append(true).append(",")
