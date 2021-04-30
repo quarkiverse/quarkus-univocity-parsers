@@ -19,6 +19,7 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
 @RegisterForReflection
 public class CSVFileExample implements Serializable {
 
+    @RegisterForReflection
     public enum Type {
         USER('U'),
         SYSTEM('S');

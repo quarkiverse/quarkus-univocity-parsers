@@ -16,13 +16,20 @@
  */
 package io.quarkiverse.univocityparsers.it;
 
-import java.io.*;
-import java.nio.charset.Charset;
-import java.util.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.LineNumberReader;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.ws.rs.*;
+import javax.ws.rs.FormParam;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -46,7 +53,7 @@ public class UnivocityParsersResource {
     public Response csvParse(@FormParam("fromClassPathFile") final String fromClassPathFile,
             @FormParam("toClassPathClass") final String toClassPathClass)
             throws IOException, ClassNotFoundException, InterruptedException {
-        Set<Object> generatedRows = new HashSet<>();
+        List<Object> generatedRows = new ArrayList<>();
 
         // For determining parsing ending
         int lines = 0;
@@ -95,12 +102,11 @@ public class UnivocityParsersResource {
             };
             parserSettings.setProcessor(beanProcessor);
             CsvParser parser = new CsvParser(parserSettings);
-            parser.parse(in, Charset.forName("ISO-8859-15"));
+            parser.parse(in, StandardCharsets.ISO_8859_1);
         }
 
         // For waiting parsing ending
         latch.await();
-        Response response = Response.ok(generatedRows).build();
-        return response;
+        return Response.ok(generatedRows).build();
     }
 }
