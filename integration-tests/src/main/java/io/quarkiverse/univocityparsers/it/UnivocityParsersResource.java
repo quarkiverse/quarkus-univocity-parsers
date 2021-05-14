@@ -55,6 +55,7 @@ public class UnivocityParsersResource {
             throws IOException, ClassNotFoundException, InterruptedException {
         List<Object> generatedRows = new ArrayList<>();
 
+        log.infof("Univocity parsers resource timezone: [%s]", System.getProperty("user.timezone"));
         // For determining parsing ending
         int lines = 0;
 

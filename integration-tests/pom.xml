@@ -51,7 +51,9 @@
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
-                    <argLine>-Duser.timezone=UTC</argLine>
+                    <systemPropertyVariables>
+                        <user.timezone>UTC</user.timezone>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
         </plugins>
@@ -82,6 +84,7 @@
                                     <goal>verify</goal>
                                 </goals>
                                 <configuration>
+                                    <argLine>-Duser.timezone=UTC</argLine>
                                     <systemPropertyVariables>
                                         <native.image.path>${project.build.directory}/${project.build.finalName}-runner
                                         </native.image.path>
