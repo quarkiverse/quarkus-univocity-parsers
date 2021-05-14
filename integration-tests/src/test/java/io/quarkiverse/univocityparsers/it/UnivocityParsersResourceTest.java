@@ -42,7 +42,6 @@ public class UnivocityParsersResourceTest {
      * @return
      */
     protected Map<String, String> generatedExceptedCSVFileExamples() {
-        boolean isNativeTesting = System.getProperty("native") != null;
 
         Map<String, String> jsonStringResult = new HashMap<>();
         StringBuilder builder = new StringBuilder();
