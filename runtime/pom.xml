@@ -9,7 +9,9 @@
   </parent>
   <artifactId>quarkus-univocity-parsers</artifactId>
   <name>Quarkus - Univocity Parsers - Runtime</name>
-  <description>A collection of extremely fast and reliable Java-based parsers for CSV, TSV and Fixed Width files</description>
+  <description>Univocity Parsers Extension, which allowing to use univocity dependency in the Quarkus' Eco-System. Example for
+      parsing csv or tsv files, with a really fast, flexible and reliable Java parsers thank to its data binding, consistent interface,
+      a solid framework and a parallel input buffering</description>
   <dependencies>
     <dependency>
       <groupId>io.quarkus</groupId>
