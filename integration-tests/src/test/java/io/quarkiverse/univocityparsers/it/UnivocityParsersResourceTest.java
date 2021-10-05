@@ -3,9 +3,11 @@ package io.quarkiverse.univocityparsers.it;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.io.StringReader;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.json.Json;
 import javax.json.JsonArray;
 
 import org.junit.jupiter.api.Test;
@@ -24,10 +26,11 @@ public class UnivocityParsersResourceTest {
         Map<String, String> formParams = new HashMap<>();
         formParams.put("fromClassPathFile", EXAMPLE_CSV_FILE);
         formParams.put("toClassPathClass", CSVFileExample.class.getName());
-        JsonArray jsonArrayResult = given()
+        String result = given()
                 .when().formParams(formParams).post("/univocity-parsers/csv/parse/")
-                .then().statusCode(200).extract().as(JsonArray.class);
+                .then().statusCode(200).extract().asString();
 
+        JsonArray jsonArrayResult = Json.createReader(new StringReader(result)).read().asJsonArray();
         Map<String, String> jsonStringResult = generatedExceptedCSVFileExamples();
 
         jsonArrayResult.forEach(jsonValue -> {
