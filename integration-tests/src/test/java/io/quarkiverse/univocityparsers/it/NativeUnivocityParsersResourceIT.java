@@ -3,9 +3,9 @@ package io.quarkiverse.univocityparsers.it;
 import java.util.HashMap;
 import java.util.Map;
 
-import io.quarkus.test.junit.NativeImageTest;
+import io.quarkus.test.junit.QuarkusIntegrationTest;
 
-@NativeImageTest
+@QuarkusIntegrationTest
 public class NativeUnivocityParsersResourceIT extends UnivocityParsersResourceTest {
 
     /**
