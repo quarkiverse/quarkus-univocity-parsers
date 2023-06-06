@@ -15,6 +15,11 @@
     <module>deployment</module>
     <module>runtime</module>
   </modules>
+  <scm>
+    <connection>:git:git@github.com:quarkiverse/quarkus-univocity-parsers.git</connection>
+    <developerConnection>scm:git:git@github.com:quarkiverse/quarkus-univocity-parsers.git</developerConnection>
+    <url>https://github.com/quarkiverse/quarkus-univocity-parsers</url>
+  </scm>
   <properties>
     <compiler-plugin.version>3.8.1</compiler-plugin.version>
     <maven.compiler.parameters>true</maven.compiler.parameters>
