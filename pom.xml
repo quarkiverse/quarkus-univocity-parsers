@@ -16,7 +16,7 @@
     <module>runtime</module>
   </modules>
   <scm>
-    <connection>:git:git@github.com:quarkiverse/quarkus-univocity-parsers.git</connection>
+    <connection>scm:git:git@github.com:quarkiverse/quarkus-univocity-parsers.git</connection>
     <developerConnection>scm:git:git@github.com:quarkiverse/quarkus-univocity-parsers.git</developerConnection>
     <url>https://github.com/quarkiverse/quarkus-univocity-parsers</url>
   </scm>
