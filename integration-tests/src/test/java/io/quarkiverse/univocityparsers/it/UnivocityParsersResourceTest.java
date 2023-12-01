@@ -7,8 +7,8 @@ import java.io.StringReader;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.json.Json;
-import javax.json.JsonArray;
+import jakarta.json.Json;
+import jakarta.json.JsonArray;
 
 import org.junit.jupiter.api.Test;
 
